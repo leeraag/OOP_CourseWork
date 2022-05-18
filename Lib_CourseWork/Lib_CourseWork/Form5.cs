@@ -42,7 +42,7 @@ namespace Lib_CourseWork
                 string sqlBooks = "SELECT * FROM Books";
                 try
                 {
-                    using (var conn = new SQLiteConnection("Data Source=libs.db"))
+                    using (var conn = new SQLiteConnection("Data Source=library.db"))
                     {
 
                         using (SQLiteDataAdapter daBooks = new SQLiteDataAdapter(sqlBooks, conn))
@@ -59,13 +59,13 @@ namespace Lib_CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (ApplicationContext db = new ApplicationContext())
+            using (libraryContext db = new libraryContext())
             {
                 DataSet dsBooks = new DataSet();
                 string sqlBooks = "SELECT * FROM Books";
                 try
                 {
-                    using (var conn = new SQLiteConnection("Data Source=libs.db"))
+                    using (var conn = new SQLiteConnection("Data Source=library.db"))
                     {
 
                         using (SQLiteDataAdapter daBooks = new SQLiteDataAdapter(sqlBooks, conn))
@@ -81,33 +81,34 @@ namespace Lib_CourseWork
                                 book.Publisher = textBox3.Text;
                                 book.Price = (int)numericUpDown1.Value;
                                 book.Year = (int)numericUpDown2.Value;
-                                //обновляем объект
-                                db.Books.Update(book);
-                                db.SaveChanges();
-                                daBooks.Fill(dsBooks);
-                                daBooks.Update(dsBooks);
-                                dataGridView1.DataSource = dsBooks.Tables[0].DefaultView;
-                                Program.f1.dataGridView1.DataSource = dsBooks.Tables[0].DefaultView;
-
+                                if (book.Title != "" && book.Title != label2.Text &&
+                                    book.Author != "" && book.Author != label5.Text &&
+                                    book.Publisher != "" && book.Publisher != label8.Text &&
+                                    book.Price >= 0 && book.Price != Convert.ToInt32(label11.Text) &&
+                                    book.Year >= 1800 && book.Year != Convert.ToInt32(label14.Text))
+                                {
+                                    //обновляем объект
+                                    db.Books.Update(book);
+                                    db.SaveChanges();
+                                    daBooks.Fill(dsBooks);
+                                    daBooks.Update(dsBooks);
+                                    dataGridView1.DataSource = dsBooks.Tables[0].DefaultView;
+                                    Program.f1.dataGridView1.DataSource = dsBooks.Tables[0].DefaultView;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Измените информацию!");
+                                }
                             }
-                            else
-                            {
-                                MessageBox.Show("Clicked RowHeader!");
-                            }
-                            //daReaders.Update(dsReaders);
-                            //dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
-                            //Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                         }
                     }
                 }
-
                 catch (Exception err)
                 {
                 }
             }
-            button1.Text = "Сохранено";
+            //button1.Text = "Сохранено";
         }
-
         // Кнопка закрыть
         private void button2_Click(object sender, EventArgs e)
         {

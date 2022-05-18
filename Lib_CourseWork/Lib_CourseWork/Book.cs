@@ -1,26 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lib_CourseWork
 {
-    public class Book
+    public partial class Book
     {
         public Reader Reader { get; private set; }
-        public int BookId { get; private set; }
-        public string Title { get; set; }
 
-        public string Author { get; set; }
-
-        public string Publisher { get; set; }
-
-        public int Price { get; set; }
-
-        public int Year { get; set; }
-
-        public int ReaderId { get; private set; }
+        public long BookId { get; set; }
+        public string Title { get; set; } = null!;
+        public string Author { get; set; } = null!;
+        public string Publisher { get; set; } = null!;
+        public long Price { get; set; }
+        public long Year { get; set; }
+        public long ReaderId { get; set; }
         /// <summary>
         /// Конструктор без параметров
         /// </summary>
@@ -42,14 +35,15 @@ namespace Lib_CourseWork
         /// <param name="publisher"></param>
         /// <param name="price"></param>
         /// <param name="year"></param>
-        public Book(string title, string author, string publisher, int price, int year)
+        public Book(string title, string author, string publisher, int price, int year, long readerId)
         {
             Title = title;
             Author = author;
             Publisher = publisher;
             Price = price;
             Year = year;
-            //ReaderId = readerId;            
+            ReaderId = readerId;            
         }
     }
 }
+

@@ -23,7 +23,7 @@ namespace Lib_CourseWork
             
             int selected = comboBox1.SelectedIndex; // 0-фио, 1-номер, 2-название, 3-автор, 4-издательство, 5-стоимость, 6-год
             string filter = textBox1.Text;
-            using (ApplicationContext db = new ApplicationContext())
+            using (libraryContext db = new libraryContext())
             {
                 switch (selected)
                 {

@@ -51,6 +51,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.BookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookPublisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -87,14 +94,23 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(470, 33);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BookID,
+            this.BookTitle,
+            this.BookAuthor,
+            this.BookPublisher,
+            this.BookPrice,
+            this.BookYear,
+            this.ReaderID});
+            this.dataGridView1.Location = new System.Drawing.Point(444, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1145, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(1145, 364);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.OnRowHeaderMouseClick);
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -233,7 +249,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(76, 531);
+            this.button1.Location = new System.Drawing.Point(444, 427);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 65);
             this.button1.TabIndex = 22;
@@ -243,9 +259,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(361, 540);
+            this.button2.Location = new System.Drawing.Point(666, 427);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 47);
+            this.button2.Size = new System.Drawing.Size(158, 65);
             this.button2.TabIndex = 23;
             this.button2.Text = "Закрыть";
             this.button2.UseVisualStyleBackColor = true;
@@ -285,11 +301,81 @@
             0,
             0});
             // 
+            // BookID
+            // 
+            this.BookID.DataPropertyName = "BookId";
+            this.BookID.Frozen = true;
+            this.BookID.HeaderText = "ID книги";
+            this.BookID.MinimumWidth = 8;
+            this.BookID.Name = "BookID";
+            this.BookID.ReadOnly = true;
+            this.BookID.Width = 130;
+            // 
+            // BookTitle
+            // 
+            this.BookTitle.DataPropertyName = "Title";
+            this.BookTitle.Frozen = true;
+            this.BookTitle.HeaderText = "Название";
+            this.BookTitle.MinimumWidth = 8;
+            this.BookTitle.Name = "BookTitle";
+            this.BookTitle.ReadOnly = true;
+            this.BookTitle.Width = 190;
+            // 
+            // BookAuthor
+            // 
+            this.BookAuthor.DataPropertyName = "Author";
+            this.BookAuthor.Frozen = true;
+            this.BookAuthor.HeaderText = "Автор";
+            this.BookAuthor.MinimumWidth = 8;
+            this.BookAuthor.Name = "BookAuthor";
+            this.BookAuthor.ReadOnly = true;
+            this.BookAuthor.Width = 190;
+            // 
+            // BookPublisher
+            // 
+            this.BookPublisher.DataPropertyName = "Publisher";
+            this.BookPublisher.Frozen = true;
+            this.BookPublisher.HeaderText = "Издательство";
+            this.BookPublisher.MinimumWidth = 8;
+            this.BookPublisher.Name = "BookPublisher";
+            this.BookPublisher.ReadOnly = true;
+            this.BookPublisher.Width = 180;
+            // 
+            // BookPrice
+            // 
+            this.BookPrice.DataPropertyName = "Price";
+            this.BookPrice.Frozen = true;
+            this.BookPrice.HeaderText = "Стоимость";
+            this.BookPrice.MinimumWidth = 8;
+            this.BookPrice.Name = "BookPrice";
+            this.BookPrice.ReadOnly = true;
+            this.BookPrice.Width = 130;
+            // 
+            // BookYear
+            // 
+            this.BookYear.DataPropertyName = "Year";
+            this.BookYear.Frozen = true;
+            this.BookYear.HeaderText = "Год издания";
+            this.BookYear.MinimumWidth = 8;
+            this.BookYear.Name = "BookYear";
+            this.BookYear.ReadOnly = true;
+            this.BookYear.Width = 130;
+            // 
+            // ReaderID
+            // 
+            this.ReaderID.DataPropertyName = "ReaderId";
+            this.ReaderID.Frozen = true;
+            this.ReaderID.HeaderText = "ID читателя";
+            this.ReaderID.MinimumWidth = 8;
+            this.ReaderID.Name = "ReaderID";
+            this.ReaderID.ReadOnly = true;
+            this.ReaderID.Width = 130;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1627, 640);
+            this.ClientSize = new System.Drawing.Size(1627, 513);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button2);
@@ -349,5 +435,12 @@
         private Button button2;
         private NumericUpDown numericUpDown1;
         private NumericUpDown numericUpDown2;
+        private DataGridViewTextBoxColumn BookID;
+        private DataGridViewTextBoxColumn BookTitle;
+        private DataGridViewTextBoxColumn BookAuthor;
+        private DataGridViewTextBoxColumn BookPublisher;
+        private DataGridViewTextBoxColumn BookPrice;
+        private DataGridViewTextBoxColumn BookYear;
+        private DataGridViewTextBoxColumn ReaderID;
     }
 }

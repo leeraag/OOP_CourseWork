@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lib_CourseWork
 {
-    public class Reader
+    public partial class Reader
     {
-        public int ReaderId { get; private set; }
-
-        public string? Name { get; set; }
-
-        public string? Phone { get; set; }
-
+        public long ReaderId { get; set; }
+        public string Name { get; set; } = null!;
+        public string Phone { get; set; } = null!;
         public List<Book> listBooks { get; private set; }
         /// <summary>
         /// Конструктор без параметров
@@ -36,5 +30,29 @@ namespace Lib_CourseWork
             Phone = phone;
             //ReaderId = readerId;
         }
+        /*public static Reader operator +(Reader reader, Book book)
+        {
+            if (!reader.listBooks.Any(b => b.Title == book.Title
+            && b.Publisher == book.Publisher))
+            {
+                reader.listBooks.Add(book);
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Книга уже существует. Нельзя добавлять одну и ту же книгу дважды",
+                    "Ошибка добавления книги",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+            }
+            return reader;
+        }
+        public static Reader operator -(Reader reader, Book book)
+        {
+            reader.listBooks.Remove(book);
+            return reader;
+        }*/
     }
 }

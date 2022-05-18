@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -39,12 +40,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReaderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReaderPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(257, 234);
+            this.maskedTextBox1.Location = new System.Drawing.Point(253, 165);
             this.maskedTextBox1.Mask = "+7 (999) 000-00-00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(171, 31);
@@ -52,14 +56,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(257, 149);
+            this.textBox1.Location = new System.Drawing.Point(253, 80);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 31);
             this.textBox1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 363);
+            this.button1.Location = new System.Drawing.Point(21, 259);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(251, 53);
             this.button1.TabIndex = 2;
@@ -69,7 +73,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(399, 363);
+            this.button2.Location = new System.Drawing.Point(295, 259);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(193, 53);
             this.button2.TabIndex = 4;
@@ -80,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(263, 121);
+            this.label1.Location = new System.Drawing.Point(259, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 25);
             this.label1.TabIndex = 5;
@@ -90,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(263, 195);
+            this.label2.Location = new System.Drawing.Point(259, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 25);
             this.label2.TabIndex = 6;
@@ -100,7 +104,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 121);
+            this.label3.Location = new System.Drawing.Point(46, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 25);
             this.label3.TabIndex = 7;
@@ -109,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 152);
+            this.label4.Location = new System.Drawing.Point(46, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 25);
             this.label4.TabIndex = 8;
@@ -118,7 +122,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 195);
+            this.label5.Location = new System.Drawing.Point(46, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(146, 25);
             this.label5.TabIndex = 9;
@@ -127,7 +131,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 234);
+            this.label6.Location = new System.Drawing.Point(46, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(132, 25);
             this.label6.TabIndex = 10;
@@ -137,21 +141,63 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ReaderID,
+            this.ReaderName,
+            this.ReaderPhone});
             this.dataGridView1.Location = new System.Drawing.Point(533, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(555, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(709, 264);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.OnRowHeaderMouseClick);
+            // 
+            // ReaderID
+            // 
+            this.ReaderID.DataPropertyName = "ReaderId";
+            this.ReaderID.Frozen = true;
+            this.ReaderID.HeaderText = "ID читателя";
+            this.ReaderID.MinimumWidth = 8;
+            this.ReaderID.Name = "ReaderID";
+            this.ReaderID.ReadOnly = true;
+            this.ReaderID.Width = 150;
+            // 
+            // ReaderName
+            // 
+            this.ReaderName.DataPropertyName = "Name";
+            this.ReaderName.Frozen = true;
+            this.ReaderName.HeaderText = "ФИО читателя";
+            this.ReaderName.MinimumWidth = 8;
+            this.ReaderName.Name = "ReaderName";
+            this.ReaderName.ReadOnly = true;
+            this.ReaderName.Width = 250;
+            // 
+            // ReaderPhone
+            // 
+            this.ReaderPhone.DataPropertyName = "Phone";
+            this.ReaderPhone.Frozen = true;
+            this.ReaderPhone.HeaderText = "Номер телефона";
+            this.ReaderPhone.MinimumWidth = 8;
+            this.ReaderPhone.Name = "ReaderPhone";
+            this.ReaderPhone.ReadOnly = true;
+            this.ReaderPhone.Width = 250;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 450);
+            this.ClientSize = new System.Drawing.Size(1283, 352);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -185,5 +231,8 @@
         private Label label5;
         private Label label6;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ReaderID;
+        private DataGridViewTextBoxColumn ReaderName;
+        private DataGridViewTextBoxColumn ReaderPhone;
     }
 }

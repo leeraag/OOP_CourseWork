@@ -58,13 +58,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 490</value>
+  <data name="button10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 559</value>
   </data>
-  <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 62</value>
+  <data name="button10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 41</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button10.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="button10.Text" xml:space="preserve">
+    <value>Сбросить сортировку</value>
+  </data>
+  <data name="&gt;&gt;button10.Name" xml:space="preserve">
+    <value>button10</value>
+  </data>
+  <data name="&gt;&gt;button10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button10.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;button10.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 491</value>
+  </data>
+  <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 61</value>
+  </data>
   <data name="button9.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -81,7 +105,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="button8.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 416</value>
@@ -105,7 +129,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="button7.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 364</value>
@@ -129,10 +153,10 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 312</value>
+    <value>25, 311</value>
   </data>
   <data name="button6.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 46</value>
@@ -153,10 +177,10 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 156</value>
+    <value>25, 157</value>
   </data>
   <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 46</value>
@@ -177,10 +201,10 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 260</value>
+    <value>25, 259</value>
   </data>
   <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 46</value>
@@ -201,10 +225,10 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 208</value>
+    <value>25, 209</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 46</value>
@@ -225,13 +249,13 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 88</value>
+    <value>25, 89</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 62</value>
+    <value>269, 61</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -249,7 +273,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 34</value>
@@ -273,7 +297,7 @@
     <value>tabPage1</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 34</value>
@@ -283,7 +307,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>321, 691</value>
+    <value>321, 631</value>
   </data>
   <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -310,7 +334,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>321, 691</value>
+    <value>321, 631</value>
   </data>
   <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -331,10 +355,10 @@
     <value>1</value>
   </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
+    <value>13, 14</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 729</value>
+    <value>329, 669</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -351,6 +375,42 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="ReaderID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ReaderID.HeaderText" xml:space="preserve">
+    <value>ID читателя</value>
+  </data>
+  <data name="ReaderID.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="ReaderID.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="ReaderName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ReaderName.HeaderText" xml:space="preserve">
+    <value>ФИО читателя</value>
+  </data>
+  <data name="ReaderName.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="ReaderName.Width" type="System.Int32, mscorlib">
+    <value>425</value>
+  </data>
+  <metadata name="ReaderPhone.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ReaderPhone.HeaderText" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="ReaderPhone.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="ReaderPhone.Width" type="System.Int32, mscorlib">
+    <value>410</value>
+  </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
     <value>348, 47</value>
   </data>
@@ -358,7 +418,7 @@
     <value>62</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>499, 225</value>
+    <value>1049, 225</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -375,14 +435,98 @@
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="BookID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BookID.HeaderText" xml:space="preserve">
+    <value>ID книги</value>
+  </data>
+  <data name="BookID.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BookID.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="BookTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BookTitle.HeaderText" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="BookTitle.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BookTitle.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="BookAuthor.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BookAuthor.HeaderText" xml:space="preserve">
+    <value>Автор</value>
+  </data>
+  <data name="BookAuthor.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BookAuthor.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="BookPublisher.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BookPublisher.HeaderText" xml:space="preserve">
+    <value>Издательство</value>
+  </data>
+  <data name="BookPublisher.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BookPublisher.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="BookPrice.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BookPrice.HeaderText" xml:space="preserve">
+    <value>Стоимость</value>
+  </data>
+  <data name="BookPrice.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BookPrice.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="BookYear.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="BookYear.HeaderText" xml:space="preserve">
+    <value>Год издания</value>
+  </data>
+  <data name="BookYear.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="BookYear.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
+    <value>ID читателя</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn1.MinimumWidth" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn1.Width" type="System.Int32, mscorlib">
+    <value>140</value>
+  </data>
   <data name="dataGridView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 319</value>
+    <value>348, 318</value>
   </data>
   <data name="dataGridView2.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>62</value>
   </data>
   <data name="dataGridView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1071, 225</value>
+    <value>1049, 225</value>
   </data>
   <data name="dataGridView2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -406,7 +550,10 @@
     <value>10, 25</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1610, 754</value>
+    <value>1424, 736</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -576,6 +723,66 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Курсовой проект "Библиотека"</value>
+  </data>
+  <data name="&gt;&gt;ReaderID.Name" xml:space="preserve">
+    <value>ReaderID</value>
+  </data>
+  <data name="&gt;&gt;ReaderID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReaderName.Name" xml:space="preserve">
+    <value>ReaderName</value>
+  </data>
+  <data name="&gt;&gt;ReaderName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ReaderPhone.Name" xml:space="preserve">
+    <value>ReaderPhone</value>
+  </data>
+  <data name="&gt;&gt;ReaderPhone.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookID.Name" xml:space="preserve">
+    <value>BookID</value>
+  </data>
+  <data name="&gt;&gt;BookID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookTitle.Name" xml:space="preserve">
+    <value>BookTitle</value>
+  </data>
+  <data name="&gt;&gt;BookTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookAuthor.Name" xml:space="preserve">
+    <value>BookAuthor</value>
+  </data>
+  <data name="&gt;&gt;BookAuthor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookPublisher.Name" xml:space="preserve">
+    <value>BookPublisher</value>
+  </data>
+  <data name="&gt;&gt;BookPublisher.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookPrice.Name" xml:space="preserve">
+    <value>BookPrice</value>
+  </data>
+  <data name="&gt;&gt;BookPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BookYear.Name" xml:space="preserve">
+    <value>BookYear</value>
+  </data>
+  <data name="&gt;&gt;BookYear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn1</value>
+  </data>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

@@ -27,48 +27,47 @@ namespace Lib_CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (ApplicationContext db = new ApplicationContext())
+            using (libraryContext db = new libraryContext())
             {
                 DataSet dsReaders = new DataSet();
                 string sqlReaders = "SELECT * FROM Readers";
                 try
                 {
-                    using (var conn = new SQLiteConnection("Data Source=libs.db"))
+                    using (var conn = new SQLiteConnection("Data Source=library.db"))
                     {
 
                         using (SQLiteDataAdapter daReaders = new SQLiteDataAdapter(sqlReaders, conn))
                         {
-                            Reader? reader = db.Readers.FirstOrDefault(reader => (reader.Name == label1.Text &&
-                            reader.Phone == label2.Text));
+                            Reader? reader = db.Readers.FirstOrDefault(reader => (reader.Name == label1.Text
+                            && reader.Phone == label2.Text));
                             if (reader != null)
                             {
                                 reader.Name = textBox1.Text;
                                 reader.Phone = maskedTextBox1.Text;
-                                //обновляем объект
-                                db.Readers.Update(reader);
-                                db.SaveChanges();
-                                daReaders.Fill(dsReaders);
-                                daReaders.Update(dsReaders);
-                                dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
-                                Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
-
+                                if (reader.Name != "" && reader.Name != label1.Text &&
+                                    reader.Phone != "" && reader.Phone != label2.Text)
+                                {
+                                    //обновляем объект
+                                    db.Readers.Update(reader);
+                                    db.SaveChanges();
+                                    daReaders.Fill(dsReaders);
+                                    daReaders.Update(dsReaders);
+                                    dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
+                                    Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Измените информацию");
+                                }
                             }
-                            else
-                            {
-                                MessageBox.Show("Clicked RowHeader!");
-                            }
-                            //daReaders.Update(dsReaders);
-                            //dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
-                            //Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                         }
-                        }
-                        }
-                    
+                    }
+                }  
                 catch (Exception err)
                 {
                 }
             }
-            button1.Text = "Сохранено";
+            //button1.Text = "Сохранено";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,7 +81,7 @@ namespace Lib_CourseWork
             string sqlReaders = "SELECT * FROM Readers";
             try
             {
-                using (var conn = new SQLiteConnection("Data Source=libs.db"))
+                using (var conn = new SQLiteConnection("Data Source=library.db"))
                 {
 
                     using (SQLiteDataAdapter daReaders = new SQLiteDataAdapter(sqlReaders, conn))

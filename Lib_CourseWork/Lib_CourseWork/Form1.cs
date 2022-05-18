@@ -24,18 +24,17 @@ namespace Lib_CourseWork
                 "Удалить?",
                 "Удаление записи",
                 MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
+                MessageBoxIcon.Warning);
             if (dialog == DialogResult.Yes)
             {
                 //MessageBox.Show("Хотите удалить?");
-                using (ApplicationContext db = new ApplicationContext())
+                using (libraryContext db = new libraryContext())
                 {
                     DataSet dsReaders = new DataSet();
                     string sqlReaders = "SELECT * FROM Readers";
                     DataSet dsBooks = new DataSet();
                     string sqlBooks = "SELECT * FROM Books";
-                    var conn = new SQLiteConnection("Data Source=libs.db");
+                    var conn = new SQLiteConnection("Data Source=library.db");
                     SQLiteDataAdapter daReaders = new SQLiteDataAdapter(sqlReaders, conn);
                     SQLiteDataAdapter daBooks = new SQLiteDataAdapter(sqlBooks, conn);
                     try
@@ -51,7 +50,9 @@ namespace Lib_CourseWork
                             daReaders.Fill(dsReaders);
                             daReaders.Update(dsReaders);
                             dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
-                        }                     
+                            //deletingReader.listBooks.Clear();
+                        }
+                        
                         string deletingTitle = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
                         string deletingAuthor = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
                         string deletingPublisher = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -68,6 +69,23 @@ namespace Lib_CourseWork
                             daBooks.Fill(dsBooks);
                             daBooks.Update(dsBooks);
                             dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
+                            //deletingBook -= book
+                            //if (reader)
+                            /*
+                             if (demoLibrary.Books.All(b => b.Title != name))
+            {
+                MessageBox.Show(
+                    "Книга не найдена! Возможно Вы сделали опечатку в названии",
+                    "Ошибка удаления книги",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.DefaultDesktopOnly);
+                return;
+            }
+
+            demoLibrary -= demoLibrary.Books.Single(b => b.Title == name);
+                             */
                         }
                     }
                     catch (ArgumentOutOfRangeException argumentOutOfRangeException)
@@ -110,7 +128,7 @@ namespace Lib_CourseWork
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (ApplicationContext db = new ApplicationContext()) //Создание подключения 
+            using (libraryContext db = new libraryContext()) //Создание подключения 
             {
                 /*Reader? reader = db.Readers.FirstOrDefault();
                 if (reader != null)
@@ -119,6 +137,19 @@ namespace Lib_CourseWork
                     db.Readers.Remove(reader);
                     db.SaveChanges();
                 }*/
+                DialogResult exit = MessageBox.Show(
+                "Выйти?",
+                "Выход",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+                if (exit == DialogResult.No) //???
+                {
+                    this.Close();
+                }
+                else
+                {
+                    // как закрыть messagebox?
+                }
             }
         }
 
@@ -149,7 +180,7 @@ namespace Lib_CourseWork
             string sqlReaders = "SELECT * FROM Readers";
             DataSet dsBooks = new DataSet();
             string sqlBooks = "SELECT * FROM Books";
-            var conn = new SQLiteConnection("Data Source=libs.db");
+            var conn = new SQLiteConnection("Data Source=library.db");
             SQLiteDataAdapter daReaders = new SQLiteDataAdapter(sqlReaders, conn);
             SQLiteDataAdapter daBooks = new SQLiteDataAdapter(sqlBooks, conn);
                 try
@@ -168,10 +199,10 @@ namespace Lib_CourseWork
         {
             fillDataGrid();
         }
-
+        // Сортировка по возрастанию цены
         private void button8_Click(object sender, EventArgs e)
         {
-            using (ApplicationContext db = new ApplicationContext()) //Создание подключения 
+            using (libraryContext db = new libraryContext()) //Создание подключения 
             {
                 var bookPriceSort = (from book in db.Books
                                      orderby book.Price ascending
@@ -182,10 +213,10 @@ namespace Lib_CourseWork
                 }
             }
         }
-
+        // Сортировка по убыванию цены
         private void button9_Click(object sender, EventArgs e)
         {
-            using (ApplicationContext db = new ApplicationContext()) //Создание подключения 
+            using (libraryContext db = new libraryContext()) //Создание подключения 
             {
                 var bookPriceSort = (from book in db.Books
                                      orderby book.Price descending
@@ -195,6 +226,11 @@ namespace Lib_CourseWork
                     dataGridView2.DataSource = bookPriceSort;
                 }
             }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            fillDataGrid();
         }
     }
 }

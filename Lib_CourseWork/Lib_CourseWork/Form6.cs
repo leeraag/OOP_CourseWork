@@ -29,7 +29,7 @@ namespace Lib_CourseWork
             }
             int selected = comboBox1.SelectedIndex; // 0-читатели, 1-книги
             string search = textBox1.Text;
-            using (ApplicationContext db = new ApplicationContext())
+            using (libraryContext db = new libraryContext())
             { 
                 switch(selected)
                 {

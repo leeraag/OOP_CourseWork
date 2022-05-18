@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Lib_CourseWork
 {
@@ -29,7 +21,7 @@ namespace Lib_CourseWork
             int year = (int)numericUpDown2.Value;
             //string.IsNullOrEmpty()
             if (title == "" || author == "" || publisher == "" ||
-                price == 0 || year == 0 || name == "" || phone == "")
+                price < 0 || year < 1800 || name == "" || phone == "")
             {
                 MessageBox.Show(
                     "Заполните информацию",
@@ -41,7 +33,7 @@ namespace Lib_CourseWork
             }
             else
             {
-                //label10.Visible = true;
+                addRecord(name, phone, title, author, publisher, price, year);
                 MessageBox.Show(
                     "Информация добавлена",
                     "ОК",
@@ -51,36 +43,45 @@ namespace Lib_CourseWork
                     MessageBoxOptions.DefaultDesktopOnly);
                 this.Close();
             }
-            using (ApplicationContext db = new ApplicationContext()) //Создание подключения 
+        }
+        private void addRecord(string name, string phone, string title, string author,
+            string publisher, int price, int year)
+        {
+            using (libraryContext db = new libraryContext()) //Создание подключения 
             {
                 // Добавление информации о читателе, обновление таблицы на главной форме
-                DataSet dsReaders = new DataSet();
+
+                var conn = new SQLiteConnection("Data Source=library.db"); DataSet dsReaders = new DataSet();
                 string sqlReaders = "SELECT * FROM Readers";
                 DataSet dsBooks = new DataSet();
                 string sqlBooks = "SELECT * FROM Books";
-                var conn = new SQLiteConnection("Data Source=libs.db");
+
                 SQLiteDataAdapter daReaders = new SQLiteDataAdapter(sqlReaders, conn);
                 SQLiteDataAdapter daBooks = new SQLiteDataAdapter(sqlBooks, conn);
                 try
                 {
                     Reader reader = new Reader(name, phone);
+
                     db.Readers.Add(reader);
                     db.SaveChanges(); //Чтобы добавленные объекты отправились в базу данных, нужно вызвать метод, сохраняющий изменения
+                    long readerId = reader.ReaderId;
                     daReaders.Fill(dsReaders);
                     daReaders.Update(dsReaders);
                     //dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                     Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
-                    
-                    Book book = new Book(title, author, publisher, price, year);
+
+                    Book book = new Book(title, author, publisher, price, year, readerId);
                     db.Books.Add(book);
                     db.SaveChanges(); //Чтобы добавленные объекты отправились в базу данных, нужно вызвать метод, сохраняющий изменения
                     daBooks.Fill(dsBooks);
                     daBooks.Update(dsBooks);
                     Program.f1.dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
                     //reader.listBooks.Add(book);
+                    //reader += book;
                 }
-                catch (Exception err)
+                catch (Microsoft.EntityFrameworkCore.DbUpdateException err)
                 {
+                    //MessageBox.Show($"Error: {Microsoft.EntityFrameworkCore.DbUpdateException.Message}");
                 }
             }
         }
