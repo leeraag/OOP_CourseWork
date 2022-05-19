@@ -9,13 +9,13 @@ namespace Lib_CourseWork
         {
             Program.f1 = this; // теперь f1 будет ссылкой на форму Form1
             InitializeComponent();
-            MessageBox.Show(
+            /*MessageBox.Show(
                 "Курсовой проект 'Библиотека'\nАгапова В.А. 20ВП1",
                 "Приветствие",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.None,
                 MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
+                MessageBoxOptions.DefaultDesktopOnly);*/
         }
         // удаление
         private void OnRowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -41,23 +41,40 @@ namespace Lib_CourseWork
                     {
                         string deletingName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                         string deletingPhone = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        string deletingTitle = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        string deletingAuthor = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        string deletingPublisher = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        int deletingPrice = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[4].Value);
+                        int deletingYear = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[5].Value);
+
                         Reader? deletingReader = db.Readers.FirstOrDefault(dReader => (dReader.Name == deletingName &&
                             dReader.Phone == deletingPhone));
                         if (deletingReader != null)
                         {
+                            long readerId = deletingReader.ReaderId;
+                            var deletingBooks = (from book in db.Books
+                                                 where book.ReaderId == readerId
+                                                 select book).ToList();
+                            //if (deletingBooks != null)
+                            //{
+                            // var lib in libraries
+                            foreach (var delBook in deletingBooks)
+                            {
+                                db.Books.Remove(delBook);
+                                db.SaveChanges();
+                                daBooks.Fill(dsBooks);
+                                daBooks.Update(dsBooks);
+                                dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
+                            }
                             db.Readers.Remove(deletingReader);
                             db.SaveChanges();
                             daReaders.Fill(dsReaders);
                             daReaders.Update(dsReaders);
                             dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                             //deletingReader.listBooks.Clear();
+                            //}
                         }
                         
-                        string deletingTitle = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-                        string deletingAuthor = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        string deletingPublisher = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
-                        int deletingPrice = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[4].Value);
-                        int deletingYear = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[5].Value);
 
                         Book? deletingBook = db.Books.FirstOrDefault(dBook => (dBook.Title == deletingTitle &&
                             dBook.Author == deletingAuthor && dBook.Publisher == deletingPublisher
@@ -101,7 +118,7 @@ namespace Lib_CourseWork
         private void button1_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2();
-            form2.Show();
+            form2.ShowDialog();
         }
 
         // Кнопка "Редактировать данные читателя"
@@ -109,14 +126,14 @@ namespace Lib_CourseWork
         {
             Form3 form3 = new Form3();
             //form3.Show(this);
-            form3.Show();
+            form3.ShowDialog();
         }
         
         // Кнопка "Фильтровать"
         private void button3_Click(object sender, EventArgs e)
         {
             Form4 form4 = new Form4();
-            form4.Show();
+            form4.ShowDialog();
         }
 
 
@@ -157,7 +174,7 @@ namespace Lib_CourseWork
         private void button5_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5();
-            form5.Show();
+            form5.ShowDialog();
         }
 
         // кнопка сбросить фильтр
@@ -170,7 +187,7 @@ namespace Lib_CourseWork
         private void button6_Click(object sender, EventArgs e)
         {
             Form6 form6 = new Form6();
-            form6.Show();
+            form6.ShowDialog();
         }
 
         // заполнение таблиц

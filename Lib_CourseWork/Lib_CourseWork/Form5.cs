@@ -98,10 +98,10 @@ namespace Lib_CourseWork
                                 {
                                     MessageBox.Show("Введите корректное название издательства");
                                 }
-                                else if (book.Title != "" && book.Title != label2.Text &&
-                                    book.Author != "" && book.Author != label5.Text &&
-                                    book.Publisher != "" && book.Publisher != label8.Text &&
-                                    book.Price >= 0 && book.Price != Convert.ToInt32(label11.Text) &&
+                                else if (book.Title != "" && book.Title != label2.Text ||
+                                    book.Author != "" && book.Author != label5.Text ||
+                                    book.Publisher != "" && book.Publisher != label8.Text ||
+                                    book.Price >= 0 && book.Price != Convert.ToInt32(label11.Text) ||
                                     book.Year >= 1800 && book.Year != Convert.ToInt32(label14.Text))
                                 {
                                     //обновляем объект

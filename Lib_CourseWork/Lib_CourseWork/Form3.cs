@@ -56,7 +56,7 @@ namespace Lib_CourseWork
                                 {
                                     MessageBox.Show("Введите номер телефона в формате: +71112223344");
                                 }
-                                else if (reader.Name != "" && reader.Name != label1.Text &&
+                                else if (reader.Name != "" && reader.Name != label1.Text ||
                                         reader.Phone != "" && reader.Phone != label2.Text)
                                 {
                                     //обновляем объект
@@ -106,6 +106,11 @@ namespace Lib_CourseWork
             catch (Exception err)
             {
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
