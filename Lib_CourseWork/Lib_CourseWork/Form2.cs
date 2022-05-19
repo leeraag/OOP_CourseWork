@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SQLite;
+using System.Text.RegularExpressions;
 
 namespace Lib_CourseWork
 {
@@ -12,16 +13,40 @@ namespace Lib_CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = textBox4.Text;
-            string phone = maskedTextBox1.Text;
-            string title = textBox1.Text;
-            string author = textBox2.Text;
-            string publisher = textBox3.Text;
+            string name = textBox1.Text;
+            string phone = textBox2.Text;
+            string title = textBox3.Text;
+            string author = textBox4.Text;
+            string publisher = textBox5.Text;
             int price = (int)numericUpDown1.Value;
             int year = (int)numericUpDown2.Value;
-            //string.IsNullOrEmpty()
-            if (title == "" || author == "" || publisher == "" ||
-                price < 0 || year < 1800 || name == "" || phone == "")
+            string patternName = @"^[а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+$";
+            string patternPhone = @"^((\+7|7|8)+([0-9]){10})$";
+            string patternTitle = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
+            string patternPublisher = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
+
+            if (!Regex.IsMatch(name, patternName))
+            {
+                MessageBox.Show("Введите ФИО читателя в формате: Фамилия Имя Отчество");
+            }
+            else if (!Regex.IsMatch(phone, patternPhone))
+            {
+                MessageBox.Show("Введите номер телефона в формате: +71112223344");
+            }
+            else if (!Regex.IsMatch(title, patternTitle))
+            {
+                MessageBox.Show("Введите корректное название книги");
+            }
+            else if (!Regex.IsMatch(author, patternName))
+            {
+                MessageBox.Show("Введите ФИО автора в формате: Фамилия Имя Отчество");
+            }
+            else if (!Regex.IsMatch(publisher, patternPublisher))
+            {
+                MessageBox.Show("Введите корректное название издательства");
+            }
+            else if (name == "" || title == "" || phone == "" ||
+                author == "" || publisher == "" || price < 0 || year < 1800)
             {
                 MessageBox.Show(
                     "Заполните информацию",
@@ -51,7 +76,8 @@ namespace Lib_CourseWork
             {
                 // Добавление информации о читателе, обновление таблицы на главной форме
 
-                var conn = new SQLiteConnection("Data Source=library.db"); DataSet dsReaders = new DataSet();
+                var conn = new SQLiteConnection("Data Source=library.db");
+                DataSet dsReaders = new DataSet();
                 string sqlReaders = "SELECT * FROM Readers";
                 DataSet dsBooks = new DataSet();
                 string sqlBooks = "SELECT * FROM Books";

@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -59,10 +60,14 @@ namespace Lib_CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string patternName = @"^[а-яА-ЯёЁa-zA-Z]+ [а-яА-ЯёЁa-zA-Z]+ [а-яА-ЯёЁa-zA-Z]+$"; // ????
+            string patternTitle = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
+            string patternPublisher = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
             using (libraryContext db = new libraryContext())
             {
                 DataSet dsBooks = new DataSet();
                 string sqlBooks = "SELECT * FROM Books";
+
                 try
                 {
                     using (var conn = new SQLiteConnection("Data Source=library.db"))
@@ -81,7 +86,19 @@ namespace Lib_CourseWork
                                 book.Publisher = textBox3.Text;
                                 book.Price = (int)numericUpDown1.Value;
                                 book.Year = (int)numericUpDown2.Value;
-                                if (book.Title != "" && book.Title != label2.Text &&
+                                if (!Regex.IsMatch(book.Title, patternTitle))
+                                {
+                                    MessageBox.Show("Введите корректное название книги");
+                                }
+                                else if (!Regex.IsMatch(book.Author, patternName))
+                                {
+                                    MessageBox.Show("Введите ФИО автора в формате: Фамилия Имя Отчество");
+                                }
+                                else if (!Regex.IsMatch(book.Publisher, patternPublisher))
+                                {
+                                    MessageBox.Show("Введите корректное название издательства");
+                                }
+                                else if (book.Title != "" && book.Title != label2.Text &&
                                     book.Author != "" && book.Author != label5.Text &&
                                     book.Publisher != "" && book.Publisher != label8.Text &&
                                     book.Price >= 0 && book.Price != Convert.ToInt32(label11.Text) &&

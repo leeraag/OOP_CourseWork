@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,16 +42,9 @@
             this.ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReaderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReaderPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(253, 165);
-            this.maskedTextBox1.Mask = "+7 (999) 000-00-00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(171, 31);
-            this.maskedTextBox1.TabIndex = 0;
             // 
             // textBox1
             // 
@@ -193,11 +185,19 @@
             this.ReaderPhone.ReadOnly = true;
             this.ReaderPhone.Width = 250;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(257, 170);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(167, 31);
+            this.textBox2.TabIndex = 12;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 352);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -208,7 +208,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.maskedTextBox1);
             this.Name = "Form3";
             this.Text = "Редактировать данные читателя";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -219,8 +218,6 @@
         }
 
         #endregion
-
-        public MaskedTextBox maskedTextBox1;
         public TextBox textBox1;
         public Button button1;
         private Button button2;
@@ -234,5 +231,6 @@
         private DataGridViewTextBoxColumn ReaderID;
         private DataGridViewTextBoxColumn ReaderName;
         private DataGridViewTextBoxColumn ReaderPhone;
+        private TextBox textBox2;
     }
 }
