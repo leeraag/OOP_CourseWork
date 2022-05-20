@@ -140,34 +140,19 @@ namespace Lib_CourseWork
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Form7 form7 = new Form7();
+            //form7.ShowDialog();
             fillDataGrid();
         }
 
+        // Выход - нажатие на крестик
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            using (libraryContext db = new libraryContext()) //Создание подключения 
-            {
-                /*Reader? reader = db.Readers.FirstOrDefault();
-                if (reader != null)
-                {
-                    //удаляем объект
-                    db.Readers.Remove(reader);
-                    db.SaveChanges();
-                }*/
-                DialogResult exit = MessageBox.Show(
-                "Выйти?",
-                "Выход",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-                if (exit == DialogResult.No) //???
-                {
-                    this.Close();
-                }
-                else
-                {
-                    // как закрыть messagebox?
-                }
-            }
+            if (MessageBox.Show("Хотите выйти?", "Выход", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.No)
+                e.Cancel = true;
+            else
+                e.Cancel = false;
         }
 
         // Кнопка "Редактировать данные книги"

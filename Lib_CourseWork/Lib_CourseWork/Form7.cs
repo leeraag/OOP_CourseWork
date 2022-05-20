@@ -20,18 +20,30 @@ namespace Lib_CourseWork
         private void InitializeTimer()
         {
             timer1.Interval = 5000;
-            timer1.Tick += new EventHandler(timer1_Tick);
+            
             timer1.Enabled = true;
+            timer1.Tick += new EventHandler(timer1_Tick);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            closingBox();
+        }
+
+        private void Form7_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            closingBox();
+        }
+
+        /// <summary>
+        /// Метод для закрытия окна приветствия
+        /// </summary>
+        private void closingBox()
+        {
             timer1.Enabled = false;
-            
             Form1 form1 = new Form1();
-            //form1.Show();
+            this.Hide();
             form1.ShowDialog();
-            this.Close();
         }
     }
 }
