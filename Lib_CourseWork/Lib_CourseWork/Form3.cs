@@ -11,7 +11,7 @@ namespace Lib_CourseWork
     {
         public Form3()
         {
-            Program.f3 = this; // теперь f3 будет ссылкой на форму Form3
+            Program.f3 = this; // Cсылка на форму Form3
             InitializeComponent();
         }
 
@@ -64,27 +64,23 @@ namespace Lib_CourseWork
                                     db.SaveChanges();
                                     daReaders.Fill(dsReaders);
                                     daReaders.Update(dsReaders);
-                                    dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                                     Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                                 }
                                 else
                                 {
                                     MessageBox.Show("Измените информацию");
                                 }
+                                Thread.Sleep(3000);
+                                this.Close();
                             }
                         }
                     }
-                }  
-                catch (Exception err)
+                }
+                catch (Exception ex)
                 {
+                    MessageBox.Show($"Error: {ex.Message}");
                 }
             }
-            //button1.Text = "Сохранено";
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -103,14 +99,10 @@ namespace Lib_CourseWork
                     }
                 }
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
+                MessageBox.Show($"Error: {ex.Message}");
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

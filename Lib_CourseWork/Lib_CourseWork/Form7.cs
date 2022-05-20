@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Lib_CourseWork
+﻿namespace Lib_CourseWork
 {
     public partial class Form7 : Form
     {
@@ -19,8 +9,7 @@ namespace Lib_CourseWork
         }
         private void InitializeTimer()
         {
-            timer1.Interval = 5000;
-            
+            timer1.Interval = 10000;
             timer1.Enabled = true;
             timer1.Tick += new EventHandler(timer1_Tick);
         }

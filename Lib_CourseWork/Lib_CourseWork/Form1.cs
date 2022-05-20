@@ -7,15 +7,8 @@ namespace Lib_CourseWork
     {
         public Form1()
         {
-            Program.f1 = this; // теперь f1 будет ссылкой на форму Form1
+            Program.f1 = this; // ссылка на форму Form1
             InitializeComponent();
-            /*MessageBox.Show(
-                "Курсовой проект 'Библиотека'\nАгапова В.А. 20ВП1",
-                "Приветствие",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.None,
-                MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);*/
         }
 
         // Кнопка "Добавить"
@@ -42,8 +35,6 @@ namespace Lib_CourseWork
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Form7 form7 = new Form7();
-            //form7.ShowDialog();
             fillDataGrid();
         }
 
@@ -77,7 +68,9 @@ namespace Lib_CourseWork
             form6.ShowDialog();
         }
 
-        // заполнение таблиц
+        /// <summary>
+        /// Метод для заполнения таблиц
+        /// </summary>
         private void fillDataGrid()
         {
             DataSet dsReaders = new DataSet();
@@ -94,15 +87,18 @@ namespace Lib_CourseWork
                 daBooks.Fill(dsBooks);
                 dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
             }
-            catch (Exception err)
+            catch (Exception ex)
             {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
         // кнопка сбросить поиск
         private void button7_Click(object sender, EventArgs e)
         {
             fillDataGrid();
         }
+
         // Сортировка по возрастанию цены
         private void button8_Click(object sender, EventArgs e)
         {
@@ -117,6 +113,7 @@ namespace Lib_CourseWork
                 }
             }
         }
+
         // Сортировка по убыванию цены
         private void button9_Click(object sender, EventArgs e)
         {
@@ -136,7 +133,11 @@ namespace Lib_CourseWork
         {
             fillDataGrid();
         }
-
+        /// <summary>
+        /// Событие по двойному клику около заголовка строки таблицы "Читатели"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteReader(object sender, DataGridViewCellMouseEventArgs e)
         {
             DialogResult dialog = MessageBox.Show(
@@ -198,6 +199,11 @@ namespace Lib_CourseWork
             }
         }
 
+        /// <summary>
+        /// Событие по двойному клику около заголовка строки таблицы "Книги"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteBook(object sender, DataGridViewCellMouseEventArgs e)
         {
             DialogResult dialog = MessageBox.Show(

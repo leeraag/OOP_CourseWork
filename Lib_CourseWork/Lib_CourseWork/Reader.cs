@@ -8,7 +8,7 @@ namespace Lib_CourseWork
         public long ReaderId { get; set; }
         public string Name { get; set; } = null!;
         public string Phone { get; set; } = null!;
-        //public List<Book> listBooks { get; set; }
+
         /// <summary>
         /// Конструктор без параметров
         /// </summary>
@@ -16,7 +16,6 @@ namespace Lib_CourseWork
         {
             Name = "Неизвестно";
             Phone = "Неизвестно";
-            //ReaderId = 1; // 0?
         }
 
         /// <summary>
@@ -28,22 +27,6 @@ namespace Lib_CourseWork
         {
             Name = name;
             Phone = phone;
-            //ReaderId = readerId;
         }
-
-        //public
-        /*public static Reader operator +(Reader reader, Book book)
-        {
-            if (!reader.listBooks.Any(b => b.Title == book.Title))
-            {
-                reader.listBooks.Add(book);
-            }
-            return reader;
-        }
-        public static Reader operator -(Reader reader, Book book)
-        {
-            reader.listBooks.Remove(book);
-            return reader;
-        }*/
     }
 }

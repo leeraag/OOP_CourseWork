@@ -21,7 +21,6 @@
             Publisher = "Неизвестно";
             Price = 0;
             Year = 0;
-            //ReaderId = 1; // 0?
         }
 
         /// <summary>

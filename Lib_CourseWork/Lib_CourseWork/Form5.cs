@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Lib_CourseWork
 {
@@ -16,7 +8,7 @@ namespace Lib_CourseWork
     {
         public Form5()
         {
-            Program.f5 = this; // теперь f5 будет ссылкой на форму Form5
+            Program.f5 = this; // Ссылка на форму Form5
             InitializeComponent();
         }
         private void OnRowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -53,14 +45,15 @@ namespace Lib_CourseWork
                         }
                     }
                 }
-                catch (Exception err)
+                catch (Exception ex)
                 {
+                    MessageBox.Show($"Error: {ex.Message}");
                 }
             }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string patternName = @"^[а-яА-ЯёЁa-zA-Z]+ [а-яА-ЯёЁa-zA-Z]+ [а-яА-ЯёЁa-zA-Z]+$"; // ????
+            string patternName = @"^[а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+$";
             string patternTitle = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
             string patternPublisher = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
             using (libraryContext db = new libraryContext())
@@ -109,32 +102,23 @@ namespace Lib_CourseWork
                                     db.SaveChanges();
                                     daBooks.Fill(dsBooks);
                                     daBooks.Update(dsBooks);
-                                    dataGridView1.DataSource = dsBooks.Tables[0].DefaultView;
-                                    Program.f1.dataGridView1.DataSource = dsBooks.Tables[0].DefaultView;
+                                    Program.f1.dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
                                 }
                                 else
                                 {
                                     MessageBox.Show("Измените информацию!");
                                 }
+                                Thread.Sleep(3000);
+                                this.Close();
                             }
                         }
                     }
                 }
-                catch (Exception err)
+                catch (Exception ex)
                 {
+                    MessageBox.Show($"Error: {ex.Message}");
                 }
             }
-            //button1.Text = "Сохранено";
-        }
-        // Кнопка закрыть
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

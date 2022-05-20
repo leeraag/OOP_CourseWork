@@ -10,7 +10,7 @@ namespace Lib_CourseWork
         {
             InitializeComponent();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text;
@@ -20,12 +20,20 @@ namespace Lib_CourseWork
             string publisher = textBox5.Text;
             int price = (int)numericUpDown1.Value;
             int year = (int)numericUpDown2.Value;
-            
-                addRecord(name, phone, title, author, publisher, price, year);
-        
-                this.Close();
-            //}
+            addRecord(name, phone, title, author, publisher, price, year);
+            this.Close();
         }
+
+        /// <summary>
+        /// Метод для добавления записи в таблицы
+        /// </summary>
+        /// <param name="name">ФИО читателя</param>
+        /// <param name="phone">Номер телефона</param>
+        /// <param name="title">Название книги</param>
+        /// <param name="author">Автор</param>
+        /// <param name="publisher">Издательство</param>
+        /// <param name="price">Стоимость</param>
+        /// <param name="year">Год выпуска</param>
         private void addRecord(string name, string phone, string title, string author,
             string publisher, int price, int year)
         {
@@ -33,7 +41,8 @@ namespace Lib_CourseWork
             string patternPhone = @"^((\+7|7|8)+([0-9]){10})$";
             string patternTitle = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
             string patternPublisher = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
-            using (libraryContext db = new libraryContext()) //Создание подключения 
+            //Создание подключения
+            using (libraryContext db = new libraryContext()) 
             {
                 // Добавление информации о читателе, обновление таблицы на главной форме
                 if (!Regex.IsMatch(name, patternName))
@@ -86,7 +95,7 @@ namespace Lib_CourseWork
                         if (existReader == null)
                         {
                             db.Readers.Add(addingReader);
-                            db.SaveChanges(); //Чтобы добавленные объекты отправились в базу данных, нужно вызвать метод, сохраняющий изменения
+                            db.SaveChanges(); //Сохранение изменений
                             long readerId = addingReader.ReaderId;
                             daReaders.Fill(dsReaders);
                             daReaders.Update(dsReaders);
@@ -94,12 +103,10 @@ namespace Lib_CourseWork
 
                             Book book = new Book(title, author, publisher, price, year, readerId);
                             db.Books.Add(book);
-                            db.SaveChanges(); //Чтобы добавленные объекты отправились в базу данных, нужно вызвать метод, сохраняющий изменения
+                            db.SaveChanges(); //Сохранение изменений
                             daBooks.Fill(dsBooks);
                             daBooks.Update(dsBooks);
-                            //addingReader += book; // добавляем книгу в список книг
                             Program.f1.dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
-                            //addingReader.listBooks.Add(book);
                         }
                         else
                         {
@@ -113,12 +120,10 @@ namespace Lib_CourseWork
                                 long readerId = existReader.ReaderId;
                                 Book book = new Book(title, author, publisher, price, year, readerId);
                                 db.Books.Add(book);
-                                db.SaveChanges(); //Чтобы добавленные объекты отправились в базу данных, нужно вызвать метод, сохраняющий изменения
+                                db.SaveChanges(); //Сохранение изменений
                                 daBooks.Fill(dsBooks);
                                 daBooks.Update(dsBooks);
-                                //addingReader += book; // добавляем книгу в список книг
                                 Program.f1.dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
-                                //addingReader.listBooks.Add(book);
                             }
                             else
                             {
@@ -126,9 +131,9 @@ namespace Lib_CourseWork
                             }
                         }
                     }
-                    catch (Microsoft.EntityFrameworkCore.DbUpdateException err)
+                    catch (Exception ex)
                     {
-                        //MessageBox.Show($"Error: {Microsoft.EntityFrameworkCore.DbUpdateException.Message}");
+                        MessageBox.Show($"Error: {ex.Message}");
                     }
                 }
             }
