@@ -20,52 +20,9 @@ namespace Lib_CourseWork
             string publisher = textBox5.Text;
             int price = (int)numericUpDown1.Value;
             int year = (int)numericUpDown2.Value;
-            //string patternName = @"^[а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+ ?[а-яА-ЯёЁa-zA-Z]+$";
-            //string patternPhone = @"^((\+7|7|8)+([0-9]){10})$";
-            //string patternTitle = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
-            //string patternPublisher = @"^[а-яА-ЯёЁa-zA-Z0-9]+( [а-яА-ЯёЁa-zA-Z0-9]+)*$";
-
-            /*if (!Regex.IsMatch(name, patternName))
-            {
-                MessageBox.Show("Введите ФИО читателя в формате: Фамилия Имя Отчество");
-            }
-            else if (!Regex.IsMatch(phone, patternPhone))
-            {
-                MessageBox.Show("Введите номер телефона в формате: +71112223344");
-            }
-            else if (!Regex.IsMatch(title, patternTitle))
-            {
-                MessageBox.Show("Введите корректное название книги");
-            }
-            else if (!Regex.IsMatch(author, patternName))
-            {
-                MessageBox.Show("Введите ФИО автора в формате: Фамилия Имя Отчество");
-            }
-            else if (!Regex.IsMatch(publisher, patternPublisher))
-            {
-                MessageBox.Show("Введите корректное название издательства");
-            }
-            else if (name == "" || title == "" || phone == "" ||
-                author == "" || publisher == "" || price < 0 || year < 1800)
-            {
-                MessageBox.Show(
-                    "Заполните информацию",
-                    "Ошибка",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
-            }*/
-            //else
-            //{
+            
                 addRecord(name, phone, title, author, publisher, price, year);
-                /*MessageBox.Show(
-                    "Информация добавлена",
-                    "ОК",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);*/
+        
                 this.Close();
             //}
         }
@@ -133,7 +90,6 @@ namespace Lib_CourseWork
                             long readerId = addingReader.ReaderId;
                             daReaders.Fill(dsReaders);
                             daReaders.Update(dsReaders);
-                            //dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                             Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
 
                             Book book = new Book(title, author, publisher, price, year, readerId);

@@ -8,7 +8,7 @@ namespace Lib_CourseWork
         public long ReaderId { get; set; }
         public string Name { get; set; } = null!;
         public string Phone { get; set; } = null!;
-        public List<Book> listBooks { get; private set; }
+        //public List<Book> listBooks { get; set; }
         /// <summary>
         /// Конструктор без параметров
         /// </summary>
@@ -30,22 +30,13 @@ namespace Lib_CourseWork
             Phone = phone;
             //ReaderId = readerId;
         }
+
+        //public
         /*public static Reader operator +(Reader reader, Book book)
         {
-            if (!reader.listBooks.Any(b => b.Title == book.Title
-            && b.Publisher == book.Publisher))
+            if (!reader.listBooks.Any(b => b.Title == book.Title))
             {
                 reader.listBooks.Add(book);
-            }
-            else
-            {
-                MessageBox.Show(
-                    "Книга уже существует. Нельзя добавлять одну и ту же книгу дважды",
-                    "Ошибка добавления книги",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.DefaultDesktopOnly);
             }
             return reader;
         }

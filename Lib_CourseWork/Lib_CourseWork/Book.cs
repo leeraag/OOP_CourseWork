@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Lib_CourseWork
+﻿namespace Lib_CourseWork
 {
     public partial class Book
     {
