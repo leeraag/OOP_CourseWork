@@ -25,6 +25,7 @@ namespace Lib_CourseWork
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlite("Data Source= C:\\Users\\valer\\OneDrive\\Документы\\Учеба\\2 курс\\2 семестр\\ооп\\курсач\\Lib_CourseWork\\Lib_CourseWork\\bin\\Debug\\net6.0-windows\\library.db");
+                // optionsBuilder.UseSqlite("Data Source= C:\\Users\\valer\\OneDrive\\Документы\\Учеба\\2 курс\\2 семестр\\ооп\\курсач\\Lib_CourseWork\\Lib_CourseWork\\bin\\Release\\net6.0-windows\\library.db");
             }
         }
 

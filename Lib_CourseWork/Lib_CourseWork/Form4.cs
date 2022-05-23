@@ -12,14 +12,23 @@ namespace Lib_CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                label2.ForeColor = Color.Red;
-            }
             if (string.IsNullOrEmpty(comboBox1.Text))
             {
                 label1.ForeColor = Color.Red;
             }
+            else
+            {
+                label1.ForeColor = Color.Black;
+            }
+            if (textBox1.Text == "")
+            {
+                label2.ForeColor = Color.Red;
+            }
+            else
+            {
+                label2.ForeColor = Color.Black;
+            }
+
             int selected = comboBox1.SelectedIndex; // 0-фио, 1-номер, 2-название, 3-автор, 4-издательство, 5-стоимость, 6-год
             string filter = textBox1.Text;
 
@@ -49,8 +58,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView1.DataSource = readerNameFilter;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -77,8 +84,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView1.DataSource = readerPhoneFilter;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -106,8 +111,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView2.DataSource = bookTitleFilter;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -135,8 +138,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView2.DataSource = bookAuthorFilter;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -164,8 +165,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView2.DataSource = bookPublisherFilter;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -194,8 +193,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView2.DataSource = bookPriceFilter;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -224,8 +221,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView2.DataSource = bookYearFilter;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {

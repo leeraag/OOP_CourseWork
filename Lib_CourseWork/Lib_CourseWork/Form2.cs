@@ -66,7 +66,7 @@ namespace Lib_CourseWork
                     MessageBox.Show("Введите корректное название издательства");
                 }
                 else if (name == "" || title == "" || phone == "" ||
-                    author == "" || publisher == "" || price < 0 || year < 1800)
+                    author == "" || publisher == "" || price < 0 || year < 1800 && year > 2023)
                 {
                     MessageBox.Show(
                         "Заполните информацию",

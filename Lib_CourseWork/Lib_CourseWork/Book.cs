@@ -2,14 +2,13 @@
 {
     public partial class Book
     {
-        public Reader Reader { get; private set; }
-
+        //public Reader Reader { get; private set; }
         public long BookId { get; set; }
         public string Title { get; set; } = null!;
         public string Author { get; set; } = null!;
         public string Publisher { get; set; } = null!;
-        public long Price { get; set; }
-        public long Year { get; set; }
+        public int Price { get; set; }
+        public int Year { get; set; }
         public long ReaderId { get; set; }
         /// <summary>
         /// Конструктор без параметров

@@ -16,9 +16,17 @@ namespace Lib_CourseWork
             {
                 label2.ForeColor = Color.Red;
             }
+            else
+            {
+                label2.ForeColor = Color.Black;
+            }
             if (string.IsNullOrEmpty(comboBox1.Text))
             {
                 label1.ForeColor = Color.Red;
+            }
+            else
+            {
+                label1.ForeColor = Color.Black;
             }
             int selected = comboBox1.SelectedIndex; // 0-читатели, 1-книги
             string search = textBox1.Text;
@@ -47,8 +55,6 @@ namespace Lib_CourseWork
                                     {
                                         Program.f1.dataGridView1.DataSource = readerSearch;
                                     }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -70,8 +76,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView1.DataSource = readerSearch;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -102,8 +106,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView2.DataSource = bookSearchNumeric;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {
@@ -127,8 +129,6 @@ namespace Lib_CourseWork
                                 {
                                     Program.f1.dataGridView2.DataSource = bookSearchText;
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                             else
                             {

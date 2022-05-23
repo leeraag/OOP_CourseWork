@@ -48,13 +48,17 @@ namespace Lib_CourseWork
                             {
                                 reader.Name = textBox1.Text;
                                 reader.Phone = textBox2.Text;
-                                if (!Regex.IsMatch(reader.Name, patternName))
+                                if (!Regex.IsMatch(reader.Name, patternName) || !Regex.IsMatch(reader.Phone, patternPhone))
                                 {
-                                    MessageBox.Show("Введите ФИО читателя в формате: Фамилия Имя Отчество");
+                                    MessageBox.Show("Введите корректные данные");
                                 }
-                                else if (!Regex.IsMatch(reader.Phone, patternPhone))
+                                //else if (!Regex.IsMatch(reader.Phone, patternPhone))
+                                //{
+                                    //MessageBox.Show("Введите номер телефона в формате: +71112223344");
+                                //}
+                                else if (textBox1.Text == null && textBox2.Text == null)
                                 {
-                                    MessageBox.Show("Введите номер телефона в формате: +71112223344");
+                                    MessageBox.Show("Заполните поля");
                                 }
                                 else if (reader.Name != "" && reader.Name != label1.Text ||
                                         reader.Phone != "" && reader.Phone != label2.Text)
@@ -64,14 +68,9 @@ namespace Lib_CourseWork
                                     db.SaveChanges();
                                     daReaders.Fill(dsReaders);
                                     daReaders.Update(dsReaders);
+                                    dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                                     Program.f1.dataGridView1.DataSource = dsReaders.Tables[0].DefaultView;
                                 }
-                                else
-                                {
-                                    MessageBox.Show("Измените информацию");
-                                }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                         }
                     }

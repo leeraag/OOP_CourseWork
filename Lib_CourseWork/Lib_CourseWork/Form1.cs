@@ -161,6 +161,7 @@ namespace Lib_CourseWork
                     {
                         long deletingReaderId = Convert.ToInt64(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
                         var deletingReader = db.Readers.Find(deletingReaderId);
+                        // если читатель существует
                         if (deletingReader != null)
                         {
                             long readerId = deletingReader.ReaderId;
@@ -177,7 +178,7 @@ namespace Lib_CourseWork
                                     daBooks.Update(dsBooks);
                                 }
                             }
-                            // если книг нет, удаляем читателя
+                            // удаляем читателя
                             db.Readers.Remove(deletingReader);
                             db.SaveChanges();
                             daReaders.Fill(dsReaders);

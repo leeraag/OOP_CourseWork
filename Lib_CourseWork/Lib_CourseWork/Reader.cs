@@ -8,7 +8,7 @@ namespace Lib_CourseWork
         public long ReaderId { get; set; }
         public string Name { get; set; } = null!;
         public string Phone { get; set; } = null!;
-
+        
         /// <summary>
         /// Конструктор без параметров
         /// </summary>

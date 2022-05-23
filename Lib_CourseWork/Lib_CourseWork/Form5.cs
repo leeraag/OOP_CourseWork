@@ -91,25 +91,28 @@ namespace Lib_CourseWork
                                 {
                                     MessageBox.Show("Введите корректное название издательства");
                                 }
+                                else if (book.Price < 0 || book.Year < 1800 || book.Year > 2023)
+                                {
+                                    MessageBox.Show("Введите корректные данные");
+                                }
                                 else if (book.Title != "" && book.Title != label2.Text ||
                                     book.Author != "" && book.Author != label5.Text ||
                                     book.Publisher != "" && book.Publisher != label8.Text ||
-                                    book.Price >= 0 && book.Price != Convert.ToInt32(label11.Text) ||
-                                    book.Year >= 1800 && book.Year != Convert.ToInt32(label14.Text))
+                                    book.Price != Convert.ToInt32(label11.Text) ||
+                                    book.Year != Convert.ToInt32(label14.Text))
                                 {
                                     //обновляем объект
                                     db.Books.Update(book);
                                     db.SaveChanges();
                                     daBooks.Fill(dsBooks);
                                     daBooks.Update(dsBooks);
+                                    dataGridView1.DataSource = dsBooks.Tables[0].DefaultView;
                                     Program.f1.dataGridView2.DataSource = dsBooks.Tables[0].DefaultView;
                                 }
                                 else
                                 {
                                     MessageBox.Show("Измените информацию!");
                                 }
-                                Thread.Sleep(3000);
-                                this.Close();
                             }
                         }
                     }
