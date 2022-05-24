@@ -12,6 +12,7 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.5",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.5",
           "SQLite": "3.13.0",
+          "SQLite.Interop.dll": "1.0.103",
           "System.Data.SQLite": "1.0.115.5"
         },
         "runtime": {
@@ -324,6 +325,7 @@
           }
         }
       },
+      "SQLite.Interop.dll/1.0.103": {},
       "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
         "dependencies": {
           "SQLitePCLRaw.core": "2.0.6",
@@ -791,6 +793,13 @@
       "sha512": "sha512-MJfRiz2p6aMVOxrxGMdVzhpzI0oxTgZSwC8eVuOpV8L7yYaFUu8q/OFYwv9P0/aZ/pdEu24O6gma6wZJMTun9A==",
       "path": "sqlite/3.13.0",
       "hashPath": "sqlite.3.13.0.nupkg.sha512"
+    },
+    "SQLite.Interop.dll/1.0.103": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Oi8SPxHOMzQ8a17t/qUCD3T+pmidxrdV7Aj0kUnxciO9XogHmZsNFDxla6emGtewZIuTpWJJLolD53YlHOmRKw==",
+      "path": "sqlite.interop.dll/1.0.103",
+      "hashPath": "sqlite.interop.dll.1.0.103.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.0.6": {
       "type": "package",

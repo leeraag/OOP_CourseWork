@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Lib_CourseWork
 {
     internal static class Program
@@ -11,6 +13,10 @@ namespace Lib_CourseWork
         [STAThread]
         static void Main()
         {
+            using (var dbContext = new libraryContext())
+            {
+                dbContext.Database.Migrate();
+            }
             ApplicationConfiguration.Initialize();
             Application.Run(new Form7());
         }

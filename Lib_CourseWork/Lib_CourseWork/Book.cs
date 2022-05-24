@@ -2,7 +2,7 @@
 {
     public partial class Book
     {
-        //public Reader Reader { get; private set; }
+        public Reader Reader { get; private set; }
         public long BookId { get; set; }
         public string Title { get; set; } = null!;
         public string Author { get; set; } = null!;
